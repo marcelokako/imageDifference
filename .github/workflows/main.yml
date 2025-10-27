@@ -20,14 +20,18 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Verificar se imagens existem
-        run: |
-          test -f exemplo.png || (echo "Erro: Arquivo 'exemplo.png' não encontrado!" && exit 1)
-          test -f exemplo_VAR.png || (echo "Erro: Arquivo 'exemplo_VAR.png' não encontrado!" && exit 1)
-          echo "✓ Imagens encontradas."
-
       - name: Compilar o código Java
         run: javac *.java
 
       - name: Listar arquivos compilados
         run: ls -l *.class
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Verificar se imagens existem
+        run: |
+          test -f exemplo.png || (echo "Erro: Arquivo 'exemplo.png' não encontrado!" && exit 1)
+          test -f exemplo_VAR.png || (echo "Erro: Arquivo 'exemplo_VAR.png' não encontrado!" && exit 1)
+          echo "✓ Imagens encontradas."
