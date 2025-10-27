@@ -30,6 +30,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
       - name: Verificar se imagens existem
         run: |
           test -f exemplo.png || (echo "Erro: Arquivo 'exemplo.png' não encontrado!" && exit 1)
