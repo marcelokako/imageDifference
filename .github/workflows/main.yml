@@ -71,7 +71,7 @@ jobs:
           echo "✓ Imagens encontradas."
 
   dast:
-    name: DAST (SCA - Análise de Dependências)
+    name: DAST
     needs: test
     runs-on: ubuntu-latest
     steps:
