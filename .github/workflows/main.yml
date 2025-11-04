@@ -78,8 +78,8 @@ jobs:
       - name: Checkout do código
         uses: actions/checkout@v4
 
-      - name: Executar OWASP Dependency Check
-        uses: owasp/dependency-check-action@v5
+      - name: Executar Dependency Check
+        uses: dependency-check/dependency-check-action@v5
         with:
           scanPath: '.' # Escaneia o diretório raiz
           format: 'HTML'
